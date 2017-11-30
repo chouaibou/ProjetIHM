@@ -13,6 +13,22 @@
     -fx-border-color: #2196f3;
 }
 
+#btnQuitter {
+    -fx-background-color: orangered;
+    -fx-border-radius: 5;
+    -fx-text-fill: white;
+    -fx-font-size: 20;
+}
+
+#btnQuitter:hover {
+    -fx-background-color: white;
+    -fx-border-radius: 5;
+    -fx-text-fill: orangered;
+    -fx-font-size: 20;
+    -fx-border-color: orangered;
+}
+
+
 #btnRetour {
     -fx-background-color: #2196f3;
     -fx-border-radius: 5;
@@ -81,7 +97,89 @@
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.8) , 10, 0, 0, 0);
 }
 
-.button {
+#btnQuotidien {
+    -fx-graphic: url("images/icons8-talk_female.png");
+    -fx-background-color: transparent;
+}
+
+#btnQuotidien:hover {
+    -fx-scale-x: 1.5;
+    -fx-scale-y: 1.5;
+    -fx-scale-z: 1.5;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.8) , 10, 0, 0, 0);
+}
+
+#btnMaison {
+    -fx-graphic: url("images/icons8-home.png");
+    -fx-background-color: transparent;
+}
+
+#btnMaison:hover {
+    -fx-scale-x: 1.5;
+    -fx-scale-y: 1.5;
+    -fx-scale-z: 1.5;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.8) , 10, 0, 0, 0);
+}
+
+#btnFamille {
+    -fx-graphic: url("images/icons8-family.png");
+    -fx-background-color: transparent;
+}
+
+#btnFamille:hover {
+    -fx-scale-x: 1.5;
+    -fx-scale-y: 1.5;
+    -fx-scale-z: 1.5;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.8) , 10, 0, 0, 0);
+}
+
+#btnAliments {
+    -fx-graphic: url("images/icons8-hamburger.png");
+    -fx-background-color: transparent;
+}
+
+#btnAliments:hover {
+    -fx-scale-x: 1.5;
+    -fx-scale-y: 1.5;
+    -fx-scale-z: 1.5;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.8) , 10, 0, 0, 0);
+}
+
+#btnCorps {
+    -fx-graphic: url("images/icons8-torso.png");
+    -fx-background-color: transparent;
+}
+
+#btnCorps:hover {
+    -fx-scale-x: 1.5;
+    -fx-scale-y: 1.5;
+    -fx-scale-z: 1.5;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.8) , 10, 0, 0, 0);
+}
+
+#btnChiffres {
+    -fx-graphic: url("images/icons8-123.png");
+    -fx-background-color: transparent;
+}
+
+#btnChiffres:hover {
+    -fx-scale-x: 1.5;
+    -fx-scale-y: 1.5;
+    -fx-scale-z: 1.5;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.8) , 10, 0, 0, 0);
+}
+
+#titreChoix {
+    -fx-border-style: solid;
+    -fx-border-radius: 5;
+    -fx-padding: 5;
+}
+
+#titre {
+    -fx-font-size: 40;
+}
+
+.button, .toggle-button {
     -fx-cursor: hand;
 }
 

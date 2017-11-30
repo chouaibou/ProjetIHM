@@ -10,25 +10,25 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.VBox?>
-<AnchorPane prefHeight="750.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jeulangue.Controller">
+<AnchorPane prefHeight="750.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jeulangue.controller.ChoixLangueController">
 
     <BorderPane prefHeight="750.0" prefWidth="750.0">
         <top>
-            <VBox spacing="20">
+            <VBox>
                 <HBox>
-                    <Button fx:id="btnRetour" text="Retour" translateX="20" translateY="50" onAction="#retourner"/>
+                    <Button fx:id="btnRetour" text="Retour" translateX="20" translateY="30" onAction="#retourner"/>
                 </HBox>
                 <HBox alignment="CENTER">
-                    <Label fx:id="titreChoix" text="Choisissez un thème" translateY="50" />
+                    <Label fx:id="titreChoix" text="Choisissez une langue" translateY="50" />
                 </HBox>
             </VBox>
         </top>
 
         <center>
             <HBox spacing="10" BorderPane.alignment="CENTER" alignment="CENTER" >
-                <fx:define>
-                    <ToggleGroup fx:id="toggleGroupIn" />
-                </fx:define>
+            <fx:define>
+                <ToggleGroup fx:id="toggleGroupIn" />
+            </fx:define>
 
                 <ToggleButton fx:id="btnAnglais" toggleGroup="$toggleGroupIn" />
                 <ToggleButton fx:id="btnAllemand" toggleGroup="$toggleGroupIn" />
