@@ -10,19 +10,20 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.VBox?>
-<AnchorPane prefHeight="750.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jeulangue.controller.ChoixThemeController">
+<AnchorPane fx:id="pageTheme" prefHeight="750.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8.0.121"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="jeulangue.controller.ChoixThemeController">
     <fx:define>
         <ToggleGroup fx:id="toggleGroupIn" />
     </fx:define>
 
     <BorderPane prefHeight="750.0" prefWidth="750.0">
         <top>
-            <VBox spacing="20">
-                <HBox>
-                    <Button fx:id="btnRetour" text="Retour" translateX="20" translateY="30" onAction="#retourner"/>
+            <VBox spacing="30">
+                <HBox translateY="30">
+                    <Button fx:id="btnRetour" text="Retour" translateX="20" onAction="#retourner"/>
                 </HBox>
-                <HBox alignment="CENTER">
-                    <Label fx:id="titreChoix" text="Choisissez un thème" translateY="50" />
+                <HBox alignment="CENTER" translateY="50">
+                    <Label fx:id="titreChoix" text="Choisissez un thème" />
                 </HBox>
             </VBox>
         </top>

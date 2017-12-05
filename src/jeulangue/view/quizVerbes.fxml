@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="pageQuiz" prefHeight="750.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jeulangue.controller.QuizVerbesController">
+
+    <BorderPane prefHeight="750.0" prefWidth="750.0">
+        <top>
+            <VBox spacing="30">
+                <HBox translateY="30">
+                    <Button fx:id="btnRetour" onAction="#retourner" text="Retour" translateX="20" />
+                </HBox>
+                <HBox alignment="CENTER" translateY="50.0">
+                    <Label fx:id="titreChoix" text="Thème" />
+                </HBox>
+            </VBox>
+        </top>
+
+        <center>
+            <VBox alignment="CENTER" spacing="20">
+                <HBox alignment="CENTER" spacing="10" translateY="-80.0">
+                    <ImageView fx:id="boxImage" fitHeight="200" fitWidth="200">
+                        <image>
+                            <Image backgroundLoading="true" url="@../images/quiz/peigner.png" />
+                        </image>
+                    </ImageView>
+                </HBox>
+                <HBox alignment="CENTER">
+                    <Label fx:id="lblReponse" />
+                </HBox>
+                <HBox alignment="CENTER" spacing="10">
+                    <Button fx:id="btnReponse1" styleClass="btnReponse" text="They are" onAction="#validerReponse"/>
+                    <Button fx:id="btnReponse2" styleClass="btnReponse" text="He is" onAction="#validerReponse"/>
+                    <Button fx:id="btnReponse3" styleClass="btnReponse" text="She is" onAction="#validerReponse"/>
+                </HBox>
+
+            </VBox>
+
+        </center>
+
+        <bottom>
+            <HBox alignment="CENTER" spacing="50" translateY="-50">
+                <Label fx:id="lblScore" text="Score : "/>
+            </HBox>
+        </bottom>
+
+    </BorderPane>
+</AnchorPane>

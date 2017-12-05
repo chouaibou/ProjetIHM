@@ -1,13 +1,65 @@
+.button, .toggle-button {
+    -fx-cursor: hand;
+}
+
+.button {
+    -fx-border-radius: 25;
+    -fx-background-radius: 25;
+}
+
+.toggle-button:selected {
+    -fx-scale-x: 1.3;
+    -fx-scale-y: 1.3;
+    -fx-scale-z: 1.3;
+    -fx-effect: dropshadow(gaussian, rgba(51, 153, 51, 1) , 20, 0, 0, 0);
+
+}
+
+.btnReponse {
+    -fx-background-color: white;
+    -fx-text-fill: black;
+    -fx-font-size: 15;
+    -fx-border-color: black;
+}
+
+.btnFaux {
+    -fx-background-color: white;
+    -fx-text-fill: red;
+    -fx-font-size: 15;
+    -fx-border-color: red;
+}
+
+.btnVrai {
+    -fx-background-color: white;
+    -fx-text-fill: green;
+    -fx-font-size: 15;
+    -fx-border-color: green;
+}
+
+#lblReponse {
+    -fx-font-size: 15;
+}
+
+.lblFaux {
+    -fx-text-fill: red;
+}
+
+.lblVrai {
+    -fx-text-fill: green;
+}
+
+#lblScore {
+    -fx-font-size: 15;
+}
+
 #btnJouer {
     -fx-background-color: #2196f3;
-    -fx-border-radius: 5;
     -fx-text-fill: white;
     -fx-font-size: 30;
 }
 
 #btnJouer:hover {
     -fx-background-color: white;
-    -fx-border-radius: 5;
     -fx-text-fill: #2196f3;
     -fx-font-size: 30;
     -fx-border-color: #2196f3;
@@ -15,14 +67,12 @@
 
 #btnQuitter {
     -fx-background-color: orangered;
-    -fx-border-radius: 5;
     -fx-text-fill: white;
     -fx-font-size: 20;
 }
 
 #btnQuitter:hover {
     -fx-background-color: white;
-    -fx-border-radius: 5;
     -fx-text-fill: orangered;
     -fx-font-size: 20;
     -fx-border-color: orangered;
@@ -31,28 +81,24 @@
 
 #btnRetour {
     -fx-background-color: #2196f3;
-    -fx-border-radius: 5;
     -fx-text-fill: white;
     -fx-font-size: 20;
 }
 
 #btnRetour:hover {
     -fx-background-color: white;
-    -fx-border-radius: 5;
     -fx-text-fill: #2196f3;
     -fx-border-color: #2196f3;
 }
 
 #btnSuivant {
     -fx-background-color: limegreen;
-    -fx-border-radius: 5;
     -fx-text-fill: white;
     -fx-font-size: 20;
 }
 
 #btnSuivant:hover {
     -fx-background-color: white;
-    -fx-border-radius: 5;
     -fx-text-fill: limegreen;
     -fx-border-color: limegreen;
 }
@@ -95,6 +141,10 @@
     -fx-scale-y: 1.5;
     -fx-scale-z: 1.5;
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.8) , 10, 0, 0, 0);
+}
+
+#lblLangueChoisie {
+    -fx-font-size: 15;
 }
 
 #btnQuotidien {
@@ -179,10 +229,6 @@
     -fx-font-size: 40;
 }
 
-.button, .toggle-button {
-    -fx-cursor: hand;
-}
-
-#fond {
+#pageAccueil {
     -fx-background-image: url("images/terre.gif");
 }

@@ -6,15 +6,15 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.VBox?>
-<AnchorPane fx:id="fond" prefHeight="750.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jeulangue.controller.StartJeuController">
+<AnchorPane fx:id="pageAccueil" prefHeight="750.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jeulangue.controller.StartJeuController">
    <BorderPane prefHeight="750.0" prefWidth="750.0">
        <top>
            <Label fx:id="titre" text="Mové Lang'" BorderPane.alignment="CENTER" translateY="50" />
        </top>
        <bottom>
            <VBox spacing="10" alignment="CENTER" BorderPane.alignment="CENTER" translateY="-50">
-               <Button fx:id="btnJouer" alignment="CENTER" text="JOUER" onAction="#lancerJeu" BorderPane.alignment="CENTER" />
-               <Button fx:id="btnQuitter" alignment="CENTER" text="QUITTER" onAction="#quitterJeu" BorderPane.alignment="CENTER" />
+               <Button fx:id="btnJouer" alignment="CENTER" text="Jouer" onAction="#lancerJeu" BorderPane.alignment="CENTER" />
+               <Button fx:id="btnQuitter" alignment="CENTER" text="Quitter" onAction="#quitterJeu" BorderPane.alignment="CENTER" />
            </VBox>
 
        </bottom>
