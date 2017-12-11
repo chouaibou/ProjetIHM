@@ -26,7 +26,7 @@ public class QuizVerbesController implements Initializable {
     Button btnRetour, btnReponse1, btnReponse2, btnReponse3;
 
     @FXML
-    Label lblReponse;
+    Label lblReponse, lblScore;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -75,8 +75,10 @@ public class QuizVerbesController implements Initializable {
             lblReponse.getStyleClass().add("lblVrai");
             btnReponse3.getStyleClass().removeAll("btnReponse");
             btnReponse3.getStyleClass().add("btnVrai");
-            btnReponse1.setDisable(true);
-            btnReponse2.setDisable(true);
+            lblScore.setText("Score : 5");
+            btnReponse1.setText("running");
+            btnReponse2.setText("combing");
+            btnReponse3.setText("listening");
         }
     }
 }

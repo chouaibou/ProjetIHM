@@ -32,9 +32,9 @@
                         <ToggleGroup fx:id="toggleGroupIn" />
                     </fx:define>
 
-                    <ToggleButton fx:id="btnAnglais" toggleGroup="$toggleGroupIn" onAction="#toggleSuivant"/>
-                    <ToggleButton fx:id="btnAllemand" toggleGroup="$toggleGroupIn" onAction="#toggleSuivant"/>
-                    <ToggleButton fx:id="btnEspagnol" toggleGroup="$toggleGroupIn" onAction="#toggleSuivant" />
+                    <ToggleButton fx:id="btnAnglais" styleClass="btnChoix" toggleGroup="$toggleGroupIn" onAction="#toggleSuivant"/>
+                    <ToggleButton fx:id="btnAllemand" styleClass="btnChoix" toggleGroup="$toggleGroupIn" onAction="#toggleSuivant"/>
+                    <ToggleButton fx:id="btnEspagnol" styleClass="btnChoix" toggleGroup="$toggleGroupIn" onAction="#toggleSuivant" />
                 </HBox>
                 <HBox alignment="CENTER">
                     <Label fx:id="lblLangueChoisie" />
@@ -45,7 +45,7 @@
 
         <bottom>
             <HBox alignment="CENTER">
-                <Button fx:id="btnSuivant" text="Suivant" translateY="-50" onAction="#allerSuivant" />
+                <Button fx:id="btnSuivant" text="Suivant" translateY="-50" onAction="#allerSuivant" disable="true" />
             </HBox>
         </bottom>
 

@@ -35,12 +35,7 @@ public class ChoixLangueController implements Initializable {
 
     @FXML
     private void allerSuivant(ActionEvent event) throws IOException {
-        Stage stage = (Stage) pageLangue.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("../view/choixTheme.fxml"));
-        Scene scene = new Scene(root);
-        scene.getStylesheets().add(getClass().getResource("../styles.css").toExternalForm());
-        stage.setScene(scene);
-        stage.show();
+        changerEcran();
     }
 
     @FXML
@@ -72,6 +67,30 @@ public class ChoixLangueController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         pageLangue.setOpacity(0);
         ouvrirPage();
+    }
+
+    private void changerEcran() {
+        FadeTransition fadeTransition = new FadeTransition();
+        fadeTransition.setDuration(Duration.millis(500));
+        fadeTransition.setNode(pageLangue);
+        fadeTransition.setFromValue(1);
+        fadeTransition.setToValue(0);
+        fadeTransition.setOnFinished((ActionEvent event) -> {
+            try {
+                chargerFenetre();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+        fadeTransition.play();
+    }
+
+    private void chargerFenetre() throws IOException {
+        Stage stage = (Stage) pageLangue.getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("../view/choixTheme.fxml"));
+        Scene scene = new Scene(root);
+        scene.getStylesheets().add(getClass().getResource("../styles.css").toExternalForm());
+        stage.setScene(scene);
     }
 
     private void ouvrirPage() {

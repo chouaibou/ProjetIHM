@@ -29,16 +29,22 @@
         </top>
 
         <center>
-            <VBox alignment="CENTER" spacing="10">
-                <HBox spacing="10" alignment="CENTER" >
-                    <ToggleButton fx:id="btnAliments" toggleGroup="$toggleGroupIn" />
-                    <ToggleButton fx:id="btnFamille" toggleGroup="$toggleGroupIn" />
-                    <ToggleButton fx:id="btnQuotidien" toggleGroup="$toggleGroupIn" />
+            <VBox alignment="CENTER" spacing="20">
+                <HBox spacing="10" alignment="CENTER">
+                    <ToggleButton fx:id="btnVerbes" styleClass="btnChoix" toggleGroup="$toggleGroupIn" onAction="#toggleSuivant"/>
                 </HBox>
                 <HBox spacing="10" alignment="CENTER" >
-                    <ToggleButton fx:id="btnMaison" toggleGroup="$toggleGroupIn" />
-                    <ToggleButton fx:id="btnChiffres" toggleGroup="$toggleGroupIn" />
-                    <ToggleButton fx:id="btnCorps" toggleGroup="$toggleGroupIn" />
+                    <ToggleButton fx:id="btnAliments" styleClass="btnChoix" toggleGroup="$toggleGroupIn" onAction="#toggleSuivant"/>
+                    <ToggleButton fx:id="btnFamille" styleClass="btnChoix" toggleGroup="$toggleGroupIn" onAction="#toggleSuivant"/>
+                    <ToggleButton fx:id="btnQuotidien" styleClass="btnChoix" toggleGroup="$toggleGroupIn" onAction="#toggleSuivant"/>
+                </HBox>
+                <HBox spacing="10" alignment="CENTER" >
+                    <ToggleButton fx:id="btnMaison" styleClass="btnChoix" toggleGroup="$toggleGroupIn" onAction="#toggleSuivant"/>
+                    <ToggleButton fx:id="btnChiffres" styleClass="btnChoix" toggleGroup="$toggleGroupIn" onAction="#toggleSuivant"/>
+                    <ToggleButton fx:id="btnCorps" styleClass="btnChoix" toggleGroup="$toggleGroupIn" onAction="#toggleSuivant"/>
+                </HBox>
+                <HBox alignment="CENTER">
+                    <Label fx:id="lblThemeChoisi" />
                 </HBox>
 
             </VBox>
@@ -47,7 +53,7 @@
 
         <bottom>
             <HBox alignment="CENTER">
-                <Button fx:id="btnSuivant" text="Suivant" translateY="-50" onAction="#allerSuivant" />
+                <Button fx:id="btnSuivant" text="Suivant" translateY="-50" onAction="#allerSuivant" disable="true"/>
             </HBox>
         </bottom>
 

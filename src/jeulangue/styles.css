@@ -22,6 +22,17 @@
     -fx-border-color: black;
 }
 
+.btnChoix {
+    -fx-background-color: transparent;
+}
+
+.btnChoix:hover {
+    -fx-scale-x: 1.5;
+    -fx-scale-y: 1.5;
+    -fx-scale-z: 1.5;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.8) , 10, 0, 0, 0);
+}
+
 .btnFaux {
     -fx-background-color: white;
     -fx-text-fill: red;
@@ -109,114 +120,50 @@
 
 #btnAllemand {
     -fx-graphic: url("images/icons8-germany.png");
-    -fx-background-color: transparent;
-}
-
-#btnAllemand:hover {
-    -fx-scale-x: 1.5;
-    -fx-scale-y: 1.5;
-    -fx-scale-z: 1.5;
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.8) , 10, 0, 0, 0);
 }
 
 #btnAnglais {
     -fx-graphic: url("images/icons8-great_britain.png");
-    -fx-background-color: transparent;
-}
-
-#btnAnglais:hover {
-    -fx-scale-x: 1.5;
-    -fx-scale-y: 1.5;
-    -fx-scale-z: 1.5;
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.8) , 10, 0, 0, 0);
 }
 
 #btnEspagnol {
     -fx-graphic: url("images/icons8-spain_2.png");
-    -fx-background-color: transparent;
-}
-
-#btnEspagnol:hover {
-    -fx-scale-x: 1.5;
-    -fx-scale-y: 1.5;
-    -fx-scale-z: 1.5;
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.8) , 10, 0, 0, 0);
 }
 
 #lblLangueChoisie {
     -fx-font-size: 15;
 }
 
-#btnQuotidien {
-    -fx-graphic: url("images/icons8-talk_female.png");
-    -fx-background-color: transparent;
+#lblThemeChoisi {
+    -fx-font-size: 15;
 }
 
-#btnQuotidien:hover {
-    -fx-scale-x: 1.5;
-    -fx-scale-y: 1.5;
-    -fx-scale-z: 1.5;
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.8) , 10, 0, 0, 0);
+#btnQuotidien {
+    -fx-graphic: url("images/icons8-talk_female.png");
 }
 
 #btnMaison {
     -fx-graphic: url("images/icons8-home.png");
-    -fx-background-color: transparent;
-}
-
-#btnMaison:hover {
-    -fx-scale-x: 1.5;
-    -fx-scale-y: 1.5;
-    -fx-scale-z: 1.5;
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.8) , 10, 0, 0, 0);
 }
 
 #btnFamille {
     -fx-graphic: url("images/icons8-family.png");
-    -fx-background-color: transparent;
-}
-
-#btnFamille:hover {
-    -fx-scale-x: 1.5;
-    -fx-scale-y: 1.5;
-    -fx-scale-z: 1.5;
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.8) , 10, 0, 0, 0);
 }
 
 #btnAliments {
     -fx-graphic: url("images/icons8-hamburger.png");
-    -fx-background-color: transparent;
-}
-
-#btnAliments:hover {
-    -fx-scale-x: 1.5;
-    -fx-scale-y: 1.5;
-    -fx-scale-z: 1.5;
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.8) , 10, 0, 0, 0);
 }
 
 #btnCorps {
     -fx-graphic: url("images/icons8-torso.png");
-    -fx-background-color: transparent;
-}
-
-#btnCorps:hover {
-    -fx-scale-x: 1.5;
-    -fx-scale-y: 1.5;
-    -fx-scale-z: 1.5;
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.8) , 10, 0, 0, 0);
 }
 
 #btnChiffres {
     -fx-graphic: url("images/icons8-123.png");
-    -fx-background-color: transparent;
 }
 
-#btnChiffres:hover {
-    -fx-scale-x: 1.5;
-    -fx-scale-y: 1.5;
-    -fx-scale-z: 1.5;
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.8) , 10, 0, 0, 0);
+#btnVerbes {
+    -fx-graphic: url("images/icons8-verb.png");
 }
 
 #titreChoix {
