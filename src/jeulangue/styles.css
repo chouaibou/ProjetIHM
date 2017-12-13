@@ -7,6 +7,15 @@
     -fx-background-radius: 25;
 }
 
+.header {
+    -fx-background-color: rgba(36, 47, 65, 1);
+    -fx-pref-height: 110;
+}
+
+.fenetre {
+    -fx-background-color: papayawhip;
+}
+
 .toggle-button:selected {
     -fx-scale-x: 1.3;
     -fx-scale-y: 1.3;
@@ -61,6 +70,7 @@
 
 #lblScore {
     -fx-font-size: 15;
+    -fx-graphic: url("images/icons8-trophy.png");
 }
 
 #btnJouer {
@@ -132,10 +142,12 @@
 
 #lblLangueChoisie {
     -fx-font-size: 15;
+    -fx-font-weight: bold;
 }
 
 #lblThemeChoisi {
     -fx-font-size: 15;
+    -fx-font-weight: bold;
 }
 
 #btnQuotidien {
@@ -167,9 +179,8 @@
 }
 
 #titreChoix {
-    -fx-border-style: solid;
-    -fx-border-radius: 5;
     -fx-padding: 5;
+    -fx-text-fill: white;
 }
 
 #titre {
@@ -178,4 +189,5 @@
 
 #pageAccueil {
     -fx-background-image: url("images/terre.gif");
+    -fx-background-color: papayawhip;
 }

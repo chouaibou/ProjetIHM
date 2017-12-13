@@ -1,0 +1,2 @@
+../images/quiz/peigner.png;She is ... her hair.;combing;listening;running;fin;
+../images/quiz/mangepomme.png;He has just ... an apple.;eaten;ate;eat;fin;

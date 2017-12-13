@@ -16,7 +16,7 @@ import java.io.IOException;
 
 public class StartJeuController {
     @FXML
-    AnchorPane pageAccueil;
+    private AnchorPane pageAccueil;
 
     @FXML
     private void lancerJeu(ActionEvent event) {
@@ -47,7 +47,9 @@ public class StartJeuController {
 
     private void chargerFenetre() throws IOException {
         Stage stage = (Stage) pageAccueil.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("../view/choixLangue.fxml"));
+        FXMLLoader Loader = new FXMLLoader();
+        Loader.setLocation(getClass().getResource("../view/choixLangue.fxml"));
+        Parent root = Loader.load();
         Scene scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("../styles.css").toExternalForm());
         stage.setScene(scene);

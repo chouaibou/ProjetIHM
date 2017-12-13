@@ -2,6 +2,7 @@ package jeulangue.controller;
 
 import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -10,6 +11,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ToggleButton;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -20,7 +22,7 @@ import java.util.ResourceBundle;
 
 public class ChoixThemeController implements Initializable{
     @FXML
-    AnchorPane pageTheme;
+    private AnchorPane pageTheme;
 
     @FXML
     Button btnRetour, btnSuivant;
@@ -32,12 +34,14 @@ public class ChoixThemeController implements Initializable{
     Label lblThemeChoisi;
 
     @FXML
-    private void allerSuivant(ActionEvent event) { changerEcran(); }
+    private void allerSuivant() { changerEcran(); }
 
     @FXML
-    private void retourner(ActionEvent event) throws IOException {
+    private void retourner() throws IOException {
         Stage stage = (Stage) btnRetour.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("../view/choixLangue.fxml"));
+        FXMLLoader Loader = new FXMLLoader();
+        Loader.setLocation(getClass().getResource("../view/choixLangue.fxml"));
+        Parent root = Loader.load();
         Scene scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("../styles.css").toExternalForm());
         stage.setScene(scene);
@@ -94,9 +98,13 @@ public class ChoixThemeController implements Initializable{
 
     private void chargerFenetre() throws IOException {
         Stage stage = (Stage) pageTheme.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("../view/quizVerbes.fxml"));
+        FXMLLoader Loader = new FXMLLoader();
+        Loader.setLocation(getClass().getResource("../view/quizVerbes.fxml"));
+        Parent root = Loader.load();
         Scene scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("../styles.css").toExternalForm());
+        QuizVerbesController quiz = Loader.getController();
+        quiz.setTitreChoix(lblThemeChoisi.getText());
         stage.setScene(scene);
     }
 

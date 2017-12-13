@@ -11,8 +11,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontPosture;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -22,19 +20,19 @@ import java.util.ResourceBundle;
 
 public class ChoixLangueController implements Initializable {
     @FXML
-    AnchorPane pageLangue;
+    private AnchorPane pageLangue;
 
     @FXML
-    ToggleButton btnAnglais, btnAllemand, btnEspagnol;
+    private ToggleButton btnAnglais, btnAllemand, btnEspagnol;
 
     @FXML
-    Label lblLangueChoisie;
+    private Label lblLangueChoisie;
 
     @FXML
-    Button btnSuivant;
+    private Button btnSuivant;
 
     @FXML
-    private void allerSuivant(ActionEvent event) throws IOException {
+    private void allerSuivant() throws IOException {
         changerEcran();
     }
 
@@ -54,9 +52,11 @@ public class ChoixLangueController implements Initializable {
     }
 
     @FXML
-    private void retourner(ActionEvent event) throws IOException {
+    private void retourner() throws IOException {
         Stage stage = (Stage) pageLangue.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("../view/startJeu.fxml"));
+        FXMLLoader Loader = new FXMLLoader();
+        Loader.setLocation(getClass().getResource("../view/startJeu.fxml"));
+        Parent root = Loader.load();
         Scene scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("../styles.css").toExternalForm());
         stage.setScene(scene);
@@ -77,7 +77,7 @@ public class ChoixLangueController implements Initializable {
         fadeTransition.setToValue(0);
         fadeTransition.setOnFinished((ActionEvent event) -> {
             try {
-                chargerFenetre();
+                chargerFenetreSuivante();
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -85,9 +85,11 @@ public class ChoixLangueController implements Initializable {
         fadeTransition.play();
     }
 
-    private void chargerFenetre() throws IOException {
+    private void chargerFenetreSuivante() throws IOException {
         Stage stage = (Stage) pageLangue.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("../view/choixTheme.fxml"));
+        FXMLLoader Loader = new FXMLLoader();
+        Loader.setLocation(getClass().getResource("../view/choixTheme.fxml"));
+        Parent root = Loader.load();
         Scene scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("../styles.css").toExternalForm());
         stage.setScene(scene);

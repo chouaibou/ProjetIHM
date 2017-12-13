@@ -1,37 +1,55 @@
 package jeulangue.controller;
 
 import javafx.animation.FadeTransition;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import jeulangue.model.Question;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class QuizVerbesController implements Initializable {
 
     @FXML
-    AnchorPane pageQuiz;
+    private AnchorPane pageQuiz;
 
     @FXML
-    Button btnRetour, btnReponse1, btnReponse2, btnReponse3;
+    private Button btnRetour, btnReponse1, btnReponse2, btnReponse3;
 
     @FXML
-    Label lblReponse, lblScore;
+    private Label lblReponse, lblScore, titreChoix;
+
+    @FXML
+    private ImageView boxImage;
+
+    static ArrayList<Question> lesQuestions;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        File fichier = new File(getClass().getResource("../phrases.txt").getFile());
+        lesQuestions = Question.chargerQuestions(fichier);
+        Question.setBoutons(btnReponse1, btnReponse2, btnReponse3);
+        lesQuestions.get(Question.getIndexQuestion()).afficherQuestions(boxImage, lblReponse);
         pageQuiz.setOpacity(0);
         ouvrirPage();
+    }
+
+    public void setTitreChoix(String themeChoisi) {
+            titreChoix.setText(themeChoisi);
     }
 
     private void ouvrirPage() {
@@ -44,9 +62,11 @@ public class QuizVerbesController implements Initializable {
     }
 
     @FXML
-    private void retourner(ActionEvent event) throws IOException {
+    private void retourner() throws IOException {
         Stage stage = (Stage) btnRetour.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("../view/choixTheme.fxml"));
+        FXMLLoader Loader = new FXMLLoader();
+        Loader.setLocation(getClass().getResource("../view/choixTheme.fxml"));
+        Parent root = Loader.load();
         Scene scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("../styles.css").toExternalForm());
         stage.setScene(scene);
@@ -56,29 +76,34 @@ public class QuizVerbesController implements Initializable {
     @FXML
     private void validerReponse(ActionEvent event) {
         Button boutonClique = (Button) event.getSource();
+        btnReponse1.setDisable(true);
+        btnReponse2.setDisable(true);
+        btnReponse3.setDisable(true);
         String reponse = boutonClique.getText();
-        lblReponse.setText(reponse);
-        if (boutonClique == btnReponse1) {
-            lblReponse.getStyleClass().remove("lblVrai");
-            lblReponse.getStyleClass().add("lblFaux");
-            btnReponse1.getStyleClass().removeAll("btnReponse");
-            btnReponse1.getStyleClass().add("btnFaux");
-            btnReponse1.setDisable(true);
-        } else if (boutonClique == btnReponse2) {
-            lblReponse.getStyleClass().remove("lblVrai");
-            lblReponse.getStyleClass().add("lblFaux");
-            btnReponse2.getStyleClass().removeAll("btnReponse");
-            btnReponse2.getStyleClass().add("btnFaux");
-            btnReponse2.setDisable(true);
-        } else {
-            lblReponse.getStyleClass().remove("lblFaux");
-            lblReponse.getStyleClass().add("lblVrai");
-            btnReponse3.getStyleClass().removeAll("btnReponse");
-            btnReponse3.getStyleClass().add("btnVrai");
-            lblScore.setText("Score : 5");
-            btnReponse1.setText("running");
-            btnReponse2.setText("combing");
-            btnReponse3.setText("listening");
-        }
+        lesQuestions.get(Question.getIndexQuestion()).verifierReponse(lesQuestions, boutonClique, lblScore);
+
+        Timer temps = new Timer();
+        temps.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                Platform.runLater(() -> {
+                    lesQuestions.get(Question.getIndexQuestion()).afficherQuestions(boxImage, lblReponse);
+                    btnReponse1.setDisable(false);
+                    btnReponse2.setDisable(false);
+                    btnReponse3.setDisable(false);
+                });
+            }
+        }, 1500);
+    }
+
+    public static void terminerQuiz(int score, int nbBonnesReponses, int nbQuestions, int tauxReussite) {
+        Alert finQuiz = new Alert(Alert.AlertType.INFORMATION);
+        finQuiz.setTitle("Fin du quiz");
+        finQuiz.setHeaderText("Vous venez de finir le quiz. Votre score est : " + score);
+        finQuiz.setContentText("Nombre de questions : " + nbQuestions + "\n"
+                + "Nombre de bonnes réponses : " + nbBonnesReponses + "\n"
+                + "Taux de réussite : " + tauxReussite);
+        finQuiz.showAndWait();
+        Question.setIndexQuestion(-1);
     }
 }
