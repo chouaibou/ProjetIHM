@@ -1,6 +1,5 @@
 package jeulangue.model;
 
-import javafx.application.Platform;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -10,9 +9,6 @@ import jeulangue.controller.QuizVerbesController;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.*;
 
 public class Question {
@@ -112,6 +108,10 @@ public class Question {
         int tauxReussite = (int) ((double)nbBonnesReponses/(double)nbQuestions*100);
         if(nbQuestions == lesQuestions.size()) {
             QuizVerbesController.terminerQuiz(score, nbBonnesReponses, nbQuestions, tauxReussite);
+            score = 0;
+            nbQuestions = 0;
+            nbBonnesReponses = 0;
+            tauxReussite = 0;
         }
         indexQuestion += 1;
         nbQuestions += 1;

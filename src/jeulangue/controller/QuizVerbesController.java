@@ -15,6 +15,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import jeulangue.Main;
 import jeulangue.model.Question;
 
 import java.io.File;
@@ -38,9 +39,12 @@ public class QuizVerbesController implements Initializable {
 
     static ArrayList<Question> lesQuestions;
 
+    private static Stage currentStage;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         File fichier = new File(getClass().getResource("../phrases.txt").getFile());
+        Question.setIndexQuestion(0);
         lesQuestions = Question.chargerQuestions(fichier);
         Question.setBoutons(btnReponse1, btnReponse2, btnReponse3);
         lesQuestions.get(Question.getIndexQuestion()).afficherQuestions(boxImage, lblReponse);
@@ -105,5 +109,18 @@ public class QuizVerbesController implements Initializable {
                 + "Taux de réussite : " + tauxReussite);
         finQuiz.showAndWait();
         Question.setIndexQuestion(-1);
+        Stage stage = Main.getPrimaryStage();
+        FXMLLoader Loader = new FXMLLoader();
+        Loader.setLocation(QuizVerbesController.class.getResource("../view/choixTheme.fxml"));
+        Parent root = null;
+        try {
+            root = Loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Scene scene = new Scene(root);
+        scene.getStylesheets().add(QuizVerbesController.class.getResource("../styles.css").toExternalForm());
+        stage.setScene(scene);
+        stage.show();
     }
 }
